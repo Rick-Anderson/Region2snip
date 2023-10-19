@@ -1,0 +1,12 @@
+// <snipet_all>
+public class TestSnippets
+{
+// <snippet_n1>
+    int x;    int y;
+// <snip_innermost>
+    public bool Test(int x, int y)
+    {        return x == y;    }
+// </snip_innermost>
+// </snippet_n1>
+}
+// </snipet_all>
