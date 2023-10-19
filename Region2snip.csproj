@@ -7,12 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="TestSnippets.cs.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="TestSnippets.cs.txt" />
-  </ItemGroup>
-
 </Project>

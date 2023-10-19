@@ -1,4 +1,5 @@
-﻿#region snipet_all
+﻿/*
+#region snipet_all
 public class TestSnippets
 {
     #region snippet_n1
@@ -10,3 +11,4 @@ public class TestSnippets
     #endregion
 }
 #endregion
+*/
