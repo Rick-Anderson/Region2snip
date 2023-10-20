@@ -7,14 +7,14 @@
             Console.WriteLine($"Usage:{AppDomain.CurrentDomain.FriendlyName} c# file path");
             return;
         }
-        var fileCopy = args[0] + ".cs";
+
         Console.WriteLine(args[0]);
 
         string[] lines = File.ReadAllLines(args[0]);
 
         var convertedLines = ConvertRegions(lines);
 
-        File.WriteAllLines(fileCopy, convertedLines);
+        File.WriteAllLines(args[0], convertedLines);
     }
 
     public static List<string> ConvertRegions(string[] lines)
@@ -31,11 +31,16 @@
                 {
                     var regionName = snippet[1].Trim();
                     regionNames.Push(regionName);
+                    Console.WriteLine(regionName);
                     result.Add($"// <{regionName}>");
                 }
             }
             else if (line.Trim().StartsWith("#endregion"))
             {
+                if (regionNames.Count > 1)
+                {
+                    Console.WriteLine("Nested region level: " + regionNames.Count);
+                }
                 if (regionNames.Count > 0)
                 {
                     var regionName = regionNames.Pop();
